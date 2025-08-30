@@ -270,7 +270,9 @@ nav.scrolled {
             </div>
             <ul class="nav-links">
                 <li><a href="{{route('home')}}">Home</a></li>
-                <li><a href="#">Lagrana</a></li>
+
+                <li><a href="{{route('lagrana')}}">Lagrana</a></li>
+               
                 <li><a href="{{route('manzano')}}">Manzano</a></li>
                 <li><a href="{{route('sumbad')}}">Sumbad</a></li>
                 <li><a href="{{route('montes')}}">Montes</a></li>
@@ -299,8 +301,8 @@ nav.scrolled {
       <h3>Quick Links</h3>
       <ul>
         <li><a href="{{route('home')}}">Home</a></li>
-        <li><a href="#experience">Lagrana</a></li>
-        <li><a href="#education">Manzano</a></li>
+        <li><a href="{{route('lagrana')}}">Lagrana</a></li>
+        <li><a href="{{route('manzano')}}">Manzano</a></li>
         <li><a href="{{route('sumbad')}}">Sumbad</a></li>
         <li><a href="{{ route('montes') }}">Montes</a></li>
       </ul>
