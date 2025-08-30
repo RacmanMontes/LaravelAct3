@@ -568,7 +568,7 @@
         
         <!-- Profile Image -->
         <div class="hero-image-overlay">
-            <img src="{{ Storage::url('images/x.jpeg') }}" alt="Racman Montes profile image" class="hero-profile-pic">
+            <img src="{{ asset('images/x.jpeg') }}" alt="Racman Montes profile image" class="hero-profile-pic">
         </div>
     </div>
 </section>
@@ -580,7 +580,7 @@
             <div class="about-content animate-on-scroll">
                 <div class="about-image">
                     <div class="profile-img-container">
-                        <img src="{{ Storage::url('images/x.jpeg') }}" alt="Racman Montes" class="profile-img">
+                        <img src="{{ asset('images/x.jpeg')  }}" alt="Racman Montes" class="profile-img">
                     </div>
                 </div>
                 <div class="about-text">
@@ -618,7 +618,7 @@
                     <div class="timeline-item">
                         <h3>Security Guard</h3>
                         <div class="company">
-                            <img src="{{Storage::url('images/edun.jpeg')}}" alt="Ilocos Sur Polytechnic State College logo" class="company-logo" onerror="this.src='https://via.placeholder.com/20'">
+                            <img src="{{ asset('images/edun.jpeg')}}" alt="Ilocos Sur Polytechnic State College logo" class="company-logo" onerror="this.src='https://via.placeholder.com/20'">
                             EDUN Security Agency
                         </div>
                         <div class="date">2023 - 2024</div>
@@ -646,7 +646,7 @@
                     <div class="timeline-item">
                         <h3>Secondary</h3>
                         <div class="company">
-                            <img src="{{Storage::url('images/east.jpeg')}}" 
+                            <img src="{{ asset('images/east.jpeg')}}" 
      alt="Pudoc West Integrated School logo" 
      class="company-logo" 
      onerror="this.src='https://via.placeholder.com/150'">
@@ -659,7 +659,7 @@
                      <div class="timeline-item">
                         <h3>Primary</h3>
                         <div class="company">
-                            <img src="{{Storage::url('images/east.jpeg')}}" 
+                            <img src="{{asset('images/east.jpeg')}}" 
      alt="Pudoc West Integrated School logo" 
      class="company-logo" 
      onerror="this.src='https://via.placeholder.com/150'">

@@ -18,7 +18,14 @@
     --glass-border: rgba(255, 255, 255, 0.1);
     --bg-dark: #0f0f23;
 }
-
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-dark);
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
 /* Navigation */
 nav {
     position: fixed;
@@ -60,7 +67,7 @@ nav.scrolled {
     text-decoration: none;
     transition: color 0.3s ease;
     position: relative;
-    font-weight: 500;
+    font-weight: 700;
     white-space: nowrap; /* Prevent link text wrap */
 }
 
@@ -107,7 +114,7 @@ nav.scrolled {
 .hero h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
-    font-family: 'Cinzel Decorative', serif;
+    font-family:  serif;
 }
 
 .hero p {
@@ -264,7 +271,7 @@ nav.scrolled {
             <ul class="nav-links">
                 <li><a href="{{route('home')}}">Home</a></li>
                 <li><a href="#">Lagrana</a></li>
-                <li><a href="#">Manzano</a></li>
+                <li><a href="{{route('manzano')}}">Manzano</a></li>
                 <li><a href="{{route('sumbad')}}">Sumbad</a></li>
                 <li><a href="{{route('montes')}}">Montes</a></li>
             </ul>

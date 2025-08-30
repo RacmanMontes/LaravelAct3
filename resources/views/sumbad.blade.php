@@ -190,7 +190,7 @@
       <!-- Sidebar -->
       <aside class="panel sidebar">
         <div class="profile">
-          <img src="{{ Storage::url('images/sumbad.jpg') }}" class="avatar"/>
+          <img src="{{ asset('images/sumbad.jpg') }}" class="avatar"/>
           <div class="name">Lhenard Sumbad</div>
           <div class="role">Front End Web Developer</div>
         </div>
