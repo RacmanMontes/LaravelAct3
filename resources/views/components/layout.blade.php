@@ -10,164 +10,164 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #6c63ff;
-            --secondary-color: #4a44c9;
-            --text-light: #ffffff;
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --bg-dark: #0f0f23;
-        }
+   <style>
+:root {
+    --primary-color: #6c63ff;
+    --secondary-color: #4a44c9;
+    --text-light: #ffffff;
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --bg-dark: #0f0f23;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-dark);
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(15, 15, 35, 0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--glass-border);
+    transition: all 0.3s ease;
+    height: 60px; /* Fixed nav height */
+}
+
+nav.scrolled {
+    background: rgba(15, 15, 35, 0.9);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%; /* Fill nav height */
+}
+
+.nav-links {
+    align-items: center;
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+.nav-links a {
+  align-items: center;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
+    font-weight: 700;
+    white-space: nowrap; /* Prevent link text wrap */
+}
+
+.nav-links li a {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    height: 60px;     /* force match navbar height */
+    line-height: normal !important; /* ignore inherited line-height */
+}
 
 
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(15, 15, 35, 0.1); /* More transparent */
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--glass-border);
-            transition: all 0.3s ease;
-        }
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
 
-        nav.scrolled {
-            background: rgba(15, 15, 35, 0.9); /* Less transparent when scrolled */
-        }
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
 
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+.nav-links a.active {
+    color: var(--primary-color);
+    font-weight: 700;
+}
 
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
 
-        .nav-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            position: relative;
-            font-weight: 500;
-        }
+/* Hero Section */
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-family:  serif;
+}
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-color);
-            transition: width 0.3s ease;
-        }
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
 
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
-            width: 100%;
-        }
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-        .nav-links a.active {
-            color: var(--primary-color);
-            font-weight: 700;
-        }
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
 
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-light);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px; /* Matches fixed nav height */
+        left: 0;
+        width: 100%;
+        background: rgba(15, 15, 35, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 1rem 0;
+        text-align: center;
+    }
 
-        /* Hero Section for Demo */
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-family: 'Cinzel Decorative', serif;
-        }
+    .nav-links.active {
+        display: flex;
+    }
 
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin-bottom: 2rem;
-        }
+    .menu-toggle {
+        display: block;
+    }
 
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 2rem;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
 
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
 
-        /* Content Sections */
-        section {
-            padding: 5rem 0;
-            position: relative;
-        }
-
-        section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            color: var(--primary-color);
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(15, 15, 35, 0.8);
-            margin-top: 3rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: rgba(15, 15, 35, 0.95);
-                backdrop-filter: blur(10px);
-                padding: 1rem 0;
-                text-align: center;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-        }
        footer {
   background: linear-gradient(135deg, #0f0f23, #1a1a40);
   color: #aaa;
@@ -269,10 +269,10 @@
                 
             </div>
             <ul class="nav-links">
-                <li><a href="{{route('home')}}" class="active">Home</a></li>
+                <li><a href="{{route('home')}}">Home</a></li>
                 <li><a href="#">Lagrana</a></li>
-                <li><a href="#">Manzano</a></li>
-                <li><a href="#">Sumbad</a></li>
+                <li><a href="{{route('manzano')}}">Manzano</a></li>
+                <li><a href="{{route('sumbad')}}">Sumbad</a></li>
                 <li><a href="{{route('montes')}}">Montes</a></li>
             </ul>
             <button class="menu-toggle">☰</button>
@@ -301,7 +301,7 @@
         <li><a href="{{route('home')}}">Home</a></li>
         <li><a href="#experience">Lagrana</a></li>
         <li><a href="#education">Manzano</a></li>
-        <li><a href="#skills">Sumbad</a></li>
+        <li><a href="{{route('sumbad')}}">Sumbad</a></li>
         <li><a href="{{ route('montes') }}">Montes</a></li>
       </ul>
     </div>
