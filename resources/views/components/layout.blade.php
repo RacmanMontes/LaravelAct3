@@ -270,7 +270,9 @@ nav.scrolled {
             </div>
             <ul class="nav-links">
                 <li><a href="{{route('home')}}">Home</a></li>
+
                 <li><a href="{{route('lagrana')}}">Lagrana</a></li>
+               
                 <li><a href="{{route('manzano')}}">Manzano</a></li>
                 <li><a href="{{route('sumbad')}}">Sumbad</a></li>
                 <li><a href="{{route('montes')}}">Montes</a></li>
