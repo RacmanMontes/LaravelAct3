@@ -423,39 +423,7 @@
             transform: scale(1.1);
         }
 
-        /* Footer */
-        footer {
-            background: var(--bg-darker);
-            padding: 3rem 0;
-            text-align: center;
-            border-top: 1px solid var(--glass-border);
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .social-links a {
-            color: var(--text-gray);
-            font-size: 1.5rem;
-            transition: color 0.3s ease, transform 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.1);
-        }
-
-        .social-links a:hover {
-            color: var(--primary-color);
-            transform: translateY(-3px);
-            background: rgba(99, 102, 241, 0.2);
-        }
+       
 
         /* Animations */
         @keyframes fadeInUp {
@@ -503,67 +471,9 @@
             }
         }
 
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
+        
 
-            .nav-links {
-                position: fixed;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: var(--bg-darker);
-                flex-direction: column;
-                padding: 2rem;
-                transform: translateY(-100vh);
-                transition: transform 0.3s ease;
-            }
-
-            .nav-links.active {
-                transform: translateY(0);
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero .subtitle {
-                font-size: 1.2rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .container {
-                padding: 0 1rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .skills-grid, .interests-grid, .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    
-
-
-
-
-
-
-    /* === HERO SECTION STYLES === */
-
+       
 /* CTA Buttons */
 .hero-buttons {
   display: flex;

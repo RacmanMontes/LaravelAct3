@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechFix - Professional Cellphone Repair</title>
+    <title> Cellphone Repair</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -18,7 +18,7 @@
             font-family: 'Raleway', sans-serif;
             color: #333;
             overflow-x: hidden;
-            line-height: 1.6;
+            
         }
 
         h1, h2, h3, h4 {
@@ -48,6 +48,57 @@
         .parallax-base {
             transform: translateZ(0);
         }
+
+
+      /* Navbar */
+    nav {
+      height: 60px;
+      background: #2c3e50;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      padding: 0 1rem;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 2rem;
+      margin: 0;
+      height: 100%;
+    }
+
+    .nav-links li a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      text-decoration: none;
+      font-weight: 500;
+      line-height: normal !important;
+      
+    }
+
+   
+
+
 
         .hero {
             height: 100vh;
