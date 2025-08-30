@@ -18,6 +18,15 @@ Route::get('/home/montes', function () {
 Route::get('/cv', function () {
     return view('cv');
 })->name('cv');
+
 Route::get('/sumbad', function () {
     return view('sumbad');
 })->name('sumbad');
+
+Route::get('/manzano', function () {
+    return view('manzano');
+})->name('manzano');
+
+Route::get('/lagrana', function () {
+    return view('lagrana');
+})->name('lagrana');

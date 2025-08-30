@@ -78,7 +78,7 @@
 <!-- CV Container -->
 <div class="cv-container" id="cv">
   <div class="left-col">
-    <img src="{{Storage::url('images/x.jpeg')}}" alt="Profile Picture" class="profile-pic">
+    <img src="{{asset('images/x.jpeg') }}" alt="Profile Picture" class="profile-pic">
     <h1 class="name">Racman N. Montes</h1>
     <p class="role">Future Full-Stack Web Developer & Creative Technologist</p>
     <h3 class="section-title">Contact</h3>
