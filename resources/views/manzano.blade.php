@@ -13,7 +13,7 @@
 
         /* Profile Section */
         .profile-box {
-            margin-top: 20px;
+            margin-top: 50px;
             text-align: center;
             
         }

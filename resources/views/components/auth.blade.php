@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
    <style>
 :root {
     --primary-color: #6c63ff;
@@ -25,7 +26,6 @@ html, body {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
 }
 /* Navigation */
 nav {
@@ -51,7 +51,7 @@ nav.scrolled {
     padding: 0 1rem;
     max-width: 1200px;
     margin: 0 auto;
-    height: 100%;
+    height: 100%; /* Fill nav height */
 }
 
 .nav-links {
@@ -59,31 +59,32 @@ nav.scrolled {
     display: flex;
     list-style: none;
     gap: 2rem;
-    flex-wrap: nowrap;
+    flex-wrap: nowrap; /* Prevent wrapping */
 }
 
 .nav-links a {
-    align-items: center;
+  align-items: center;
     color: var(--text-light);
     text-decoration: none;
     transition: color 0.3s ease;
     position: relative;
     font-weight: 700;
-    white-space: nowrap;
+    white-space: nowrap; /* Prevent link text wrap */
 }
 
 .nav-links li a {
     display: flex;
     align-items: center;
     justify-content: center; 
-    height: 60px;
-    line-height: normal !important;
+    height: 60px;     /* force match navbar height */
+    line-height: normal !important; /* ignore inherited line-height */
 }
+
 
 .nav-links a::after {
     content: '';
     position: absolute;
-    bottom: 15px;
+    bottom: -5px;
     left: 0;
     width: 0;
     height: 2px;
@@ -110,21 +111,33 @@ nav.scrolled {
     cursor: pointer;
 }
 
-/* Centered Content */
-main.content {
-    display: flex;
-    justify-content: center;   /* center horizontally */
-    padding-top: 120px;        /* push down from navbar */
-    min-height: calc(100vh - 200px); /* leave space for footer */
+/* Hero Section */
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-family:  serif;
 }
 
-.form-wrapper {
-    width: 100%;
-    max-width: 400px;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsive Design */
@@ -133,7 +146,7 @@ main.content {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 70px;
+        top: 70px; /* Matches fixed nav height */
         left: 0;
         width: 100%;
         background: rgba(15, 15, 35, 0.95);
@@ -149,10 +162,14 @@ main.content {
     .menu-toggle {
         display: block;
     }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
 }
 
-/* Footer */
-footer {
+
+       footer {
   background: linear-gradient(135deg, #0f0f23, #1a1a40);
   color: #aaa;
   padding: 3rem 1rem 1rem;
@@ -239,19 +256,7 @@ footer {
   border-top: 1px solid var(--glass-border);
 }
 
-.pindutan{
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  padding: 9px 19px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-}
-.pindutan:hover {
-  background-color: var(--secondary-color);
-}
+
     </style>
 </head>
 <body>
@@ -259,31 +264,28 @@ footer {
     <nav id="navbar">
         <div class="nav-container">
             <div class="logo">
-                <i class="fas fa-mobile-alt" style="font-size: 2rem; color: var(--primary-color); margin-right: 10px;"></i>
-                <span style="font-weight: 700; font-size: 1.7rem; color: var(--text-light);">Cellphone Repair</span>
+               
+                    <i class="fas fa-mobile-alt" style="font-size: 2rem; color: var(--primary-color); margin-right: 10px;"></i>
+                    <span style="font-weight: 700; font-size: 1.7rem; color: var(--text-light);">Cellphone Repair</span>
+                
             </div>
             <ul class="nav-links">
-                <li><a href="{{route('home')}}">Home</a></li>
-                <li><a href="{{route('lagrana')}}">Lagrana</a></li>
-                <li><a href="{{route('manzano')}}">Manzano</a></li>
-                <li><a href="{{route('sumbad')}}">Sumbad</a></li>
-                <li><a href="{{route('montes')}}">Montes</a></li>
-                <li>
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <button class ="pindutan" type="submit">Logout</button>
-                    </form>
-                </li>
+                <li><a href="{{route('home')}}"></a></li>
+
+                <li><a href="{{route('lagrana')}}"></a></li>
+               
+                <li><a href="{{route('manzano')}}"></a></li>
+                <li><a href="{{route('sumbad')}}"></a></li>
+                <li><a href="{{route('montes')}}"></a></li>
             </ul>
             <button class="menu-toggle">☰</button>
         </div>
     </nav>
 </header>
 
-    <main >
-        
-            {{ $slot }}
-      
+
+    <main>
+        {{ $slot }}
     </main>
 
   <footer>
@@ -324,8 +326,10 @@ footer {
   </div>
 </footer>
 
+
+
     <script>
-        // Navbar transparency on scroll
+        // JavaScript for navbar transparency on scroll
         window.addEventListener('scroll', function() {
             const navbar = document.getElementById('navbar');
             if (window.scrollY > 50) {
@@ -340,5 +344,6 @@ footer {
             document.querySelector('.nav-links').classList.toggle('active');
         });
     </script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
